@@ -1,17 +1,37 @@
-/* Reset & Base */
+/* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "Segoe UI", Arial, sans-serif; line-height: 1.6; color: #333; background: #f4f6f9; }
+
+/* Body */
+body { 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+  color: #333; 
+  background: #f9f9f9; 
+}
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #004080, #0073e6);
+  background: #004080;
   color: white;
-  padding: 30px 0;
+  padding: 60px 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-header p { font-size: 1.2rem; opacity: 0.9; }
+header h1 { font-size: 2.8rem; margin-bottom: 10px; }
+header p { font-size: 1.2rem; }
+
+/* Hero Banner (homepage only) */
+.hero {
+  background: url('images/school/school-building.jpg') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+.hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
+.hero p { font-size: 1.5rem; }
 
 /* Navbar */
 nav {
@@ -24,67 +44,59 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
-nav a:hover { background: #0059b3; border-radius: 5px; }
+nav a:hover { background: #0059b3; }
+nav a.active { background: #0073e6; }
 
 /* Sections */
-section { padding: 50px 20px; max-width: 1100px; margin: auto; }
+section { padding: 40px 20px; max-width: 1100px; margin: auto; }
 section h2 { text-align: center; margin-bottom: 20px; font-size: 2rem; color: #004080; }
 
 /* Gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 .gallery img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
-.gallery img:hover { transform: scale(1.05); }
 
-/* Teachers */
-.teachers { background: #eef5ff; padding: 50px 20px; }
+/* Teachers / Departments */
+.teachers { background: #eef5ff; }
 .teacher-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  gap: 20px;
 }
-.teacher {
+.teacher, .teacher-list a {
   background: white;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
-.teacher:hover { transform: translateY(-5px); }
+.teacher:hover, .teacher-list a:hover { transform: scale(1.03); }
 .teacher img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
-  border: 3px solid #004080;
 }
 .teacher h3 { margin-bottom: 10px; color: #004080; }
-
-/* Contact */
-.contact-info {
-  text-align: center;
-  font-size: 1.2rem;
-}
-.contact-info p { margin-bottom: 10px; }
 
 /* Footer */
 footer {
   background: #00264d;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   margin-top: 30px;
-  font-size: 0.9rem;
 }
